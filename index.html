@@ -7,16 +7,47 @@
     <title>Lab3</title>
 
     <link rel="stylesheet" type="text/css" href="style.css">
-    <audio autoplay loop volume="0.5">
-        <source src="conan.mpeg" type="audio/flac">
+    <audio id="bg-music" loop volume="0.5">
+        <source src="conan.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
+    <button id="playButton">Play Audio</button>
+
+    <script>
+        var audio = document.getElementById("bg-music");
+        var playButton = document.getElementById("playButton");
+
+        var isAutoplaySupported = false;
+        if (typeof audio.play === "function") {
+            isAutoplaySupported = true;
+        }
+
+        // Function to play audio
+        function playAudio() {
+            if (isAutoplaySupported) {
+                audio.play().catch(function (error) {
+
+                    console.error("Autoplay was prevented: ", error);
+                });
+            } else {
+
+                console.log("Autoplay is not supported by your browser. Please click the play button to start audio.");
+            }
+        }
+
+        playButton.addEventListener("click", playAudio);
+
+    </script>
+
+
+
 </head>
 
 <body>
     <script src="script.js"></script>
     <div class="loader-wrapper">
-        <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+        <div aria-label="Orange and tan hamster running in a metal wheel" conan role="img" class="wheel-and-hamster">
             <div class="wheel"></div>
             <div class="hamster">
                 <div class="hamster__body">

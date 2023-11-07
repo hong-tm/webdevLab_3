@@ -14,3 +14,4 @@ window.addEventListener("load", function () {
     var loaderWrapper = document.querySelector(".loader-wrapper");
     loaderWrapper.style.display = "none";
 });
+
