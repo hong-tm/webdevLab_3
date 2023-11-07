@@ -1,4 +1,4 @@
-# This is my third uni project webdev_lab_2
+# This is my third uni project webdev_lab_3
 
 ## An upgrade version from lab 2
 ## 😎 done by **06/11/2023**
